@@ -43,6 +43,7 @@ function App() {
   const [distance, setDistance] = useState<number | null>(null);
   const [airportOne, setAirportOne] = useState<Airport | null>(null);
   const [airportTwo, setAirportTwo] = useState<Airport | null>(null);
+  const Token = process.env.REACT_APP_GITHUB_PAT;
   
 
   // Function to fetch airport details like latitude and longitude from the API
@@ -50,7 +51,7 @@ function App() {
     try {
       const response = await axios.get(`https://airportgap.com/api/airports/${code}`, {
         headers: {
-          'Authorization': `Bearer token=wsKmLvm5YmFbjWtb3CWusfhL`, // Authorization header for API
+          'Authorization': `Bearer token = ${Token}`, // Authorization header for API
           'Content-Type': 'application/json',
         },
       });
