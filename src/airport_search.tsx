@@ -22,7 +22,6 @@ type AirportSearchProps = {
 
 const AirportSearch: React.FC<AirportSearchProps> = ({ label, onAirportSelect }) => {
   // State to hold the currently selected airport
-  const [selectedAirport, setSelectedAirport] = useState<Airport | null>(null);
 
   // Explicitly type the JSON file data to match the defined AirportData interface
   const airportDataTyped: AirportData = airportData as AirportData;
@@ -37,7 +36,6 @@ const AirportSearch: React.FC<AirportSearchProps> = ({ label, onAirportSelect })
   // Event handler triggered when the user selects an airport
   const handleAirportSelect = (event: any, value: Airport | null) => {
     // Update the state with the selected airport
-    setSelectedAirport(value);
     // If an airport was selected (not null), trigger the callback to the parent component
     if (value) {
       onAirportSelect(value);
